@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 package com.example.affirmations.model
-
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-
 /**
  * [Affirmation] is the data class to represent the Affirmation text and imageResourceId
  */
