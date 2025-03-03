@@ -20,12 +20,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -91,14 +93,27 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
                     .height(194.dp),
                 contentScale = ContentScale.Crop
             )
-            Text(
-                text = LocalContext.current.getString(affirmation.stringResourceId),
-                modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.headlineSmall
-            )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = LocalContext.current.getString(affirmation.stringResourceId),
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.weight(0.8f) // Chiếm 80% không gian
+                )
+                Button(
+                    onClick = { /* TODO: Xử lý sự kiện click */ },
+                    modifier = Modifier.weight(0.2f) // Chiếm 20% không gian
+                ) {
+                    Text("OK")
+                }
+            }
         }
     }
 }
+
 
 @Preview
 @Composable
