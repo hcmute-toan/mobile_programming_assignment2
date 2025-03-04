@@ -1,3 +1,9 @@
+Name : Van Cong Toan
+
+ID : 22110079
+
+HomeWork : Affirmations App
+================================
 Affirmations App - Solution Code
 ================================
 
